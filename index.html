@@ -7,28 +7,51 @@
     </title> 
 </head> 
   
-<body style = "text-align:center;">  
-      <style>
+
+
+<style>
 body {
   background-image: url('henny.jpg');
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
 }
+span.b {
+  display: inline-block;
+  float: right;
+  position: fixed;
+}
+span.a {
+	display: inline-block;
+	position:static;
+}
+.table{
+    display:table;
+    height: 100%;
+    width: 100%;
+}
+.table-cell{
+    display:table-cell;
+    vertical-align: middle;
+}
 </style>
-    <h1 style = "color:red; font-size:30pt;">  
+    <h1 style = "color:red; font-size:30pt; text-align:center;">  
         SHOT O' CLOCK  
     </h1>  
-    <h3 style = "color:black;">
+    <h1 style = "color:black; text-align:center;">
 		Input a time interval so this program can randomly tell you when to drink.
-	</h3>
+	</h1>
+	
+	<h1 style= "text-align:center; font-size: 20pt;">
 	<input id = "input">
 		min mins
 	</input>
     <input id = "input2">
 		max mins
 	</input>
-	<h2>
+	</h1>
+	
+	<h2 style = "text-align:center;">
 	<button id = "button" onclick = "scripta()">  
 		click here to PARTY  
     </button>  
@@ -36,11 +59,23 @@ body {
 		click here to STOP
     </button>  
 	</h2>
-	<h4 id = "partytime" style="font-size:24pt;">
-		IT'S TIME FOR... 
-	</h4>
-	<img id="myImage" src="shots0.gif" style="width:600px; padding-bottom: 200px;">		
-    <p id = "disclaimer">
+	<h4 id = "partytime" style="font-size:24pt;" display:inline;>
+		<h1 style = "text-align:center;"> 
+			<p>
+				<div class="static">
+					IT'S TIME FOR... 
+				</div>
+				<div class="pictureborder">
+					<div class="table">
+						<div class="table-cell">
+				<img id="myImage" src="shots0.gif" style="width:600px; padding-bottom:50px;">
+						</div>
+					</div>
+				</div>
+			<iframe src="https://open.spotify.com/embed/playlist/4Kn8AYjuM2Psc0glokuwYW" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+			</p>
+	</h4>	
+    <p id = "disclaimer" style = "text-align:center;">
 		There is a bias towards the median numbers in the interval.
 	</p>
 	<style>
@@ -52,6 +87,13 @@ body {
 				1px -1px 0 #000,
 				-1px 1px 0 #000,
 				1px 1px 0 #000;  
+		}
+		div.static {
+			position:static;
+		}
+		div.fixed {
+			position:fixed;
+			float: right;
 		}
 	</style>
 		
@@ -132,6 +174,7 @@ body {
 		}		
 	   
     </script>  
+
 </body>  
-  
+
 </html> 
