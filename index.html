@@ -39,7 +39,7 @@ body {
 	<h4 id = "partytime" style="font-size:24pt;">
 		IT'S TIME FOR... 
 	</h4>
-	<img id="myImage" src="shots0.png" style="width:1000px">		
+	<img id="myImage" src="shots0.jfif" style="width:1000px">		
       
     <script>
 		var isrunning;
@@ -76,12 +76,12 @@ body {
 					
 				} else {
 					if(!resettimer) {
-					document.getElementById('myImage').src='shots1.png';
+					document.getElementById('myImage').src='shots1.jfif';
 					var audio = new Audio('app audio2.mp3');
 					await audio.play();	
 
 					setTimeout(function() {
-						document.getElementById('myImage').src='shots0.png';
+						document.getElementById('myImage').src='shots0.jfif';
 						myTimer(ABC, true);
 					}, 9500);
 					
