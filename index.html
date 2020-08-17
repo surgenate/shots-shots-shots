@@ -30,7 +30,7 @@ body {
 	</input>
 	<h2>
 	<button id = "button" onclick = "scripta()">  
-		click here TO PARTY  
+		click here to PARTY  
     </button>  
 	<button id = "button2" onclick = "script2()" disabled>  
 		click here to STOP
@@ -56,22 +56,38 @@ body {
 
 		}
 		function script1() {
+				const delayToStart = 60000; //in millisceconds
 				if(isrunning === false) {
 					
 				} else {
-				var lower = document.getElementById('input').value;  
-				var higher = document.getElementById('input2').value;
+				var lowerA = document.getElementById('input').value;  
+				var higherA = document.getElementById('input2').value;
+				var lower = lowerA * 5;
+				var higher = higherA * 5;
 				lower = Math.ceil(lower);
 				higher = Math.floor(higher);
-				var ABC = Math.floor(Math.random() * (higher - lower)) + lower; //The maximum is exclusive and the minimum is inclusive
-				var myVar = setTimeout(myTimer, ABC * 60000, ABC, false);
+				var ABC = Math.floor(Math.random() * (higher - lower + 1)) + lower; //The maximum is exclusive and the minimum is inclusive
+				console.log (ABC);
+				ABC = ABC * 0.1;
+				ABC = Math.floor(ABC);
+				
+				var lowerB = lowerA *5;
+				var higherB = higherA *5;
+				var ABC2 = Math.floor(Math.random() * (higherB - lowerB + 1)) + lowerB; //The maximum is exclusive and the minimum is inclusive
+				ABC2 = ABC2 * 0.1;
+				ABC2 = Math.ceil(ABC2);
+				
+				var ABC3 = ABC + ABC2;
+				console.log (ABC, ABC2, ABC3);
+				var myVar = setTimeout(myTimer, ABC3 * delayToStart, ABC3, false);
 				}
 				
 				
 				
 		}
-		async function myTimer(ABC, resettimer) {
-			//alert ("IT'S TIME FOR SHOTS " + ABC );
+		async function myTimer(ABC3, resettimer) {
+			const changeImage = 9000;
+			console.log ("IT'S TIME FOR SHOTS " + ABC3 );
 			if(isrunning === false) {
 					
 				} else {
@@ -82,8 +98,8 @@ body {
 
 					setTimeout(function() {
 						document.getElementById('myImage').src='shots0.gif';
-						myTimer(ABC, true);
-					}, 9500);
+						myTimer(ABC3, true);
+					}, changeImage);
 					
 
 					return;
