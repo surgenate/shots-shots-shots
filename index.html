@@ -39,7 +39,7 @@ body {
 	<h4 id = "partytime" style="font-size:24pt;">
 		IT'S TIME FOR... 
 	</h4>
-	<img id="myImage" src="shots0.gif" style="width:600px">		
+	<img id="myImage" src="shots0.gif" style="width:500px">		
       
     <script>
 		var isrunning;
@@ -64,7 +64,7 @@ body {
 				lower = Math.ceil(lower);
 				higher = Math.floor(higher);
 				var ABC = Math.floor(Math.random() * (higher - lower)) + lower; //The maximum is exclusive and the minimum is inclusive
-				var myVar = setTimeout(myTimer, ABC * 1000, ABC, false);
+				var myVar = setTimeout(myTimer, ABC * 60000, ABC, false);
 				}
 				
 				
