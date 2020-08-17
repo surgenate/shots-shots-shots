@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>  
+<html>  
+  
+<head>  
+    <title>  
+        IT'S SHOT O' CLOCK
+    </title> 
+</head> 
+  
+<body style = "text-align:center;">  
+      <style>
+body {
+  background-image: url('henny.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+    <h1 style = "color:red; font-size:30pt;">  
+        SHOT O' CLOCK  
+    </h1>  
+    <h3 style = "color:black;">
+		Input a time interval so this program can randomly tell you when to drink.
+	</h3>
+	<input id = "input">
+		min mins
+	</input>
+    <input id = "input2">
+		max mins
+	</input>
+	<h2>
+	<button id = "button" onclick = "scripta()">  
+		click here TO PARTY  
+    </button>  
+	<button id = "button2" onclick = "script2()" disabled>  
+		click here to STOP
+    </button>  
+	</h2>
+	<h4 id = "partytime" style="font-size:24pt;">
+		IT'S TIME FOR... 
+	</h4>
+	<img id="myImage" src="shots0.png" style="width:1000px">		
+      
+    <script>
+		var isrunning;
+		isrunning = true; // is the button running
+        
+		function scripta() {
+			if(isrunning === false) {
+				isrunning=true;
+			}
+			document.getElementById("partytime").innerHTML = 'PARTY TIME';
+			script1();
+			document.getElementById("button").disabled=true;
+			document.getElementById("button2").disabled=false;
+
+		}
+		function script1() {
+				if(isrunning === false) {
+					
+				} else {
+				var lower = document.getElementById('input').value;  
+				var higher = document.getElementById('input2').value;
+				lower = Math.ceil(lower);
+				higher = Math.floor(higher);
+				var ABC = Math.floor(Math.random() * (higher - lower)) + lower; //The maximum is exclusive and the minimum is inclusive
+				var myVar = setTimeout(myTimer, ABC * 1000, ABC, false);
+				}
+				
+				
+				
+		}
+		async function myTimer(ABC, resettimer) {
+			//alert ("IT'S TIME FOR SHOTS " + ABC );
+			if(isrunning === false) {
+					
+				} else {
+					if(!resettimer) {
+					document.getElementById('myImage').src='shots1.png';
+					var audio = new Audio('app audio2.mp3');
+					await audio.play();	
+
+					setTimeout(function() {
+						document.getElementById('myImage').src='shots0.png';
+						myTimer(ABC, true);
+					}, 9500);
+					
+
+					return;
+				}
+			}	
+			
+			script1();
+		}	
+		function script2() {
+			if(isrunning === true){
+				isrunning = false;
+				}
+			document.getElementById("partytime").innerHTML = 'SAD TIME';
+			document.getElementById("button").disabled=false;
+			document.getElementById("button2").disabled=true;
+		}		
+	   
+    </script>  
+</body>  
+  
+</html> 
