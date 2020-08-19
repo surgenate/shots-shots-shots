@@ -52,25 +52,21 @@ span.a {
 	</h1>
 	
 	<h2 style = "text-align:center;">
-	<button id = "button" onclick = "scripta()">  
+		<button id = "button" onclick = "scripta()">  
 		click here to PARTY  
-    </button>  
-	<button id = "button2" onclick = "script2()" disabled>  
+		</button>  
+		<button id = "button2" onclick = "script2()" disabled>  
 		click here to STOP
-    </button>  
+		</button>  
+		<p>
+					IT'S TIME FOR...
+		</p>
 	</h2>
-	<h4 id = "partytime" style="font-size:24pt;" display:inline;>
+	<h4 id = "partytime" style="font-size:24pt; text-align:center;">
 		<h1 style = "text-align:center;"> 
-			<p>
-				<div class="static">
-					IT'S TIME FOR... 
-				</div>
-				<div class="pictureborder">
-					<div class="table">
-						<div class="table-cell">
+			<p> 
+				<div>
 				<img id="myImage" src="shots0.gif" style="width:600px; padding-bottom:50px;">
-						</div>
-					</div>
 				</div>
 			<iframe src="https://open.spotify.com/embed/playlist/4Kn8AYjuM2Psc0glokuwYW" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 			</p>
@@ -98,6 +94,7 @@ span.a {
 	</style>
 		
     <script>
+		//var counter = 0; //counter for preventing repeats
 		var isrunning;
 		isrunning = true; // is the button running
         
